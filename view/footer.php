@@ -2,7 +2,7 @@
 	<div class="container-fluid">
 		<div class="row" style="text-align: center; padding:15px;">
 
-			Copyright <span class="glyphicon glyphicon-copyright-mark"></span> 2016 - 2017 <a href="#">The minds behind CodeBar</a>
+			Copyright <span class="glyphicon glyphicon-copyright-mark"></span> 2016 - 2017 <a href="OurTeam.php">The minds behind CodeBar</a>
 
 		</div>
 	</div>
