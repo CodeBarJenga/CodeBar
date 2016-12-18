@@ -29,7 +29,7 @@ class usercontroller {
 		$list = $this -> conn -> fetch_contest();
 		$lead = $this -> conn -> fetch_lead($_SESSION['username']);
 		$archive_contest = $this -> conn -> problem_archive();
-		$res = $this -> conn -> getsubmission($_SESSION['username']);
+		$res = $this -> conn -> getSubmissionForUser($_SESSION['username']);
 		//$_SESSION['flag'] = TRUE;
 		include 'view/viewuser.php';
 		if (isset($_POST['entercontest'])) {

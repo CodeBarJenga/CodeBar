@@ -40,7 +40,7 @@
 				
 			</div>
 			<div class="row">
-				<div class="col-md-2 col-md-offset-2">
+				<div class="col-md-2 col-md-offset-1">
 					<img class ="img-circle" src="images/nitin.jpg" height="200" width="200">
 					<h4 align="center">Nitin Pamnani</h4>
 				</div>
@@ -57,7 +57,8 @@
 					<h4 align="center">Pratap Singh Ranawat</h4>
 				</div>
 				<div class="col-md-2">
-					
+					<img class ="img-circle" src="images/sanjay.jpeg" height="200" width="200">
+					<h4 align="center">Sanjay Sharma,  <small class="text-muted">On-site coordinator</small></h4>
 				</div>
 			</div>
 

@@ -38,9 +38,10 @@ class indexcontroller {
 		}
 		include 'view/viewindex.php';
 	}
-
-	public function validateuser() {
-		$username = mysql_real_escape_string($_POST['username']);
+	
+    public function validateuser() {
+		$link = $this -> conn -> getLinkToDBConnectionObject();	
+		$username = mysqli_real_escape_string($link, $_POST['username']);
 		if (trim($username) == "" or trim($_POST['password'] == "")) {
 			$this -> redirect('index.php?error=1');
 			//$this -> invalidate();

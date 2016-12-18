@@ -34,7 +34,7 @@ class usermodel {
 
 	}
 	//getting All submission
-	public function getsubmission($us) {
+	public function getSubmissionForUser($us) {
 		$stmt = $this -> conn -> db -> prepare("SELECT * FROM submission WHERE username=?");
 		$stmt->bind_param('s',$us);
 		$stmt -> execute();
