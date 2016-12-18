@@ -31,7 +31,7 @@
 				<div class="col-md-4 col-md-offset-5">
 					<div class="row">
 						<img class ="img-circle" src="images/GanpatSir.jpg" height="200" width="200" >
-						<h4> Mr.Ganpat Singh Chauhan, <small class="text-muted">Mentor and Vsionary</small></h4>
+						<h4> Mr.Ganpat Singh Chauhan, <small class="text-muted">Mentor and Visionary</small></h4>
 					</div>
 				</div>
 				<div class="col-md-3">

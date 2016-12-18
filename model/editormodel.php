@@ -96,29 +96,46 @@ class editormodel extends usermodel {
 		
 		
 		
-		
-		function update_rating($probcode,$user,$contestname){
-		
-		$stmt = $this -> conn -> db -> prepare("SELECT PIET1+PIET2+PIET3 AS 'TOTAL' FROM $contestname WHERE username=?");
-		$stmt->bind_param('s',$user);
-		$stmt -> execute();
-		$values = array();
-		$result=$stmt -> get_result();
-		while ($row = $result -> fetch_assoc())
-		{
-			$values[] = $row;
-		}
-		$rating = $values[0]['TOTAL'];
-		echo $rating;
-		$stmt = $this -> conn-> db -> prepare("UPDATE users SET rating = ? WHERE username=?");
-		$stmt->bind_param('ss',$rating,$user);
-		if($stmt->execute()==TRUE)
-		  $_SESSION['paint']=TRUE;
-		else
-		{
-			$_SESSION['paint']=FALSE;
-		} 
-	}
+	function update_rating($probcode,$user,$contestname){
+        
+        $stmt = $this -> conn -> db -> prepare("SELECT * FROM problems WHERE contestname=?");
+        $stmt -> bind_param('s', $contestname);
+        $stmt -> execute();
+        $values = array();
+        $result=$stmt -> get_result();
+        while ($row = $result -> fetch_assoc())
+        {
+            $values[] = $row;
+        }
+        
+        $stmt2 = $this -> conn -> db -> prepare("SELECT * FROM $contestname WHERE username=?");
+        $stmt2 -> bind_param('s', $user);
+        $stmt2 -> execute();
+        $values2 = array();
+        $result2 = $stmt2 -> get_result();
+        while ($row = $result2 -> fetch_assoc())
+        {
+            $values2[] = $row;
+        }
 
+        $rate=0.0;
+        for($i=0; $i<count($values); $i++)
+        {
+        	echo "count($values)";
+            $x=$values[$i]['problemcode'];
+            $rate = $rate + floatval($values2[0][$x]);
+        }
+     
+        echo "rate   ".$rate;
+        $stmt = $this -> conn-> db -> prepare("UPDATE users SET rating = ? WHERE username=?");
+        $stmt->bind_param('ss',$rate,$user);
+        if($stmt->execute()==TRUE)
+          $_SESSION['paint']=TRUE;
+        else
+        {
+            $_SESSION['paint']=FALSE;
+        }
+		
+    }
 }
 ?>
