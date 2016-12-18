@@ -16,15 +16,11 @@ class indexcontroller {
 	public function redirect($location) {
 		header('location: ' . $location);
 	}
-
+	
+	
 	public function handlerequest() {
 		//$_SESSION['flag'] = FALSE;
 		$msg = $this -> conn -> Check();
-		if ($msg) {
-			echo 'Connection Established ';
-		} else {
-			echo 'Connection not established';
-		}
 		include 'view/viewindex.php';
 		if (isset($_POST['login'])) {
 			$this -> validateuser();
@@ -35,7 +31,8 @@ class indexcontroller {
 	}
 
 	public function validateuser() {
-		$username = mysql_real_escape_string($_POST['username']);
+		$link = $this -> conn -> getDBConnectionObject();
+		$username = mysqli_real_escape_string($link, $_POST['username']);
 		if (trim($username) == "" or trim($_POST['password'] == "")) {
 			$this -> redirect('index.php?error=1');
 		} else {

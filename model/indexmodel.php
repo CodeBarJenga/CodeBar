@@ -12,6 +12,9 @@ class indexmodel {
 		$this -> conn=new dbfunctions();
 		$this -> usf=new userfunctions();
 	}
+	function getLinkToDBConnectionObject(){
+		return $this -> conn -> getDBConnectionObject();
+	}
 
 	function Check() {
 		if ($this -> conn -> db) {

@@ -15,6 +15,9 @@
 			$this->db = mysqli_connect($servername,$username,$password,$dbname);	
 			
         }
+		function getDBConnectionObject() {
+			return $this -> db;
+		}
 		
 		//to populate users
 		function Show()

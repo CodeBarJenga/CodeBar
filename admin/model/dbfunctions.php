@@ -17,6 +17,11 @@
 			$this->db = mysqli_connect($servername,$username,$password,$dbname);	
 			
         }
+		
+		function getDBConnectionObject() {
+			return $this -> db;
+		}
+		
 		function Check()
 		{
 			if($this->db)
