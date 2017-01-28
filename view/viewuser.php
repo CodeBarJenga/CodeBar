@@ -108,52 +108,52 @@ $sec="200";
 										<td><?php echo $list[$i]['startdt']; ?></td>
 										<td><?php echo $list[$i]['enddt']; ?></td>
 										<?php if(($list[$i]['stampst']+3600<=(strtotime('now')+19800))&& (strtotime('now')+19800)<$list[$i]['stampend']+3600)
-{
-//$_SESSION['contest']=$list[$i]['contestname'];?>
-<td>
-<form method="post" action="">
-<button type="button" data-toggle="modal" data-target="#contestrules"  class="btn btn-primary btn-sm">Enter Contest</button>
-        <!--div for each and every contest modal-->
-        <!--WE are keeping the rules and regulations modals in footer-->
-<div class="modal fade" id="contestrules"  role="dialog" aria-labelledby="myModalLabel" data-backdrop="static" data-keyboard="false">
-			<div class="modal-dialog" role="document">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-							<span aria-hidden="true">&times;</span>
-						</button>
-						<h1 class="modal-title" id="myModalLabel" align="center">Rules and Regulations</h1>
-					</div>
-					<div class="modal-body" align="justify">
-						<ol>
+                                         {
+											//$_SESSION['contest']=$list[$i]['contestname'];?>
+                                       <td>
+                                         <form method="post" action="">
+											<button type="button" data-toggle="modal" data-target="#contestrules" id="<?php echo $list[$i]['contestname']; ?>" onclick="setContestOnGo(this.id)"  class="btn btn-primary btn-sm">Enter Contest</button>
+        										<!--div for each and every contest modal-->
+        										<!--WE are keeping the rules and regulations modals in footer-->
+         										<div class="modal fade" id="contestrules"  role="dialog" aria-labelledby="myModalLabel" data-backdrop="static" data-keyboard="false">
+												  <div class="modal-dialog" role="document">
+												    <div class="modal-content">
+					                                  <div class="modal-header">
+						                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							                               <span aria-hidden="true">&times;</span>
+						                                </button>
+						                                <h1 class="modal-title" id="myModalLabel" align="center">Rules and Regulations</h1>
+					                                  </div>
+					                                  <div class="modal-body" align="justify">
+						                                 <ol>
 							
-							<li>
-								Your problem would be successfully submitted once it matches all the test-cases.
-							</li>
-							<li>
-								Rating is done on the basis of time taken by a contestant to solve a problem.
-							</li>
-							<li>
-								The contestant would be immediately disqualified if the code is found matching by our Plagiarism Detector
-							</li>
-							<li>
-								Once you have finished all the problems you can later see the best solutions through the discussion forum.
-							</li>
-							<li>
-								In case of JAVA programmers their class name must be <b>solution</b>.
-							</li>
-						</ol>
-					</div>
-                    <div class="modal-footer">
-                    	<button type="submit" class="btn btn-primary btn-sm" name="entercontest" value="<?php echo $list[$i]['contestname']; ?>">GO</button>
-                    </div>
-				</div>
-			</div>
-		</div>
-</form>
-</td>
-<?php }else{?>
-						<td><button type="button" class="btn btn-primary btn-sm" disabled>Enter Contest</button></td>
+															<li>
+																Your problem would be successfully submitted once it matches all the test-cases.
+															</li>
+															<li>
+																Rating is done on the basis of time taken by a contestant to solve a problem.
+															</li>
+															<li>
+																The contestant would be immediately disqualified if the code is found matching by our Plagiarism Detector
+															</li>
+															<li>
+																Once you have finished all the problems you can later see the best solutions through the discussion forum.
+															</li>
+															<li>
+																In case of JAVA programmers their class name must be <b>solution</b>.
+															</li>
+														</ol>
+													</div>
+                    								<div class="modal-footer">
+                    									<button type="submit" class="btn btn-primary btn-sm" name="entercontest" id="openContest">GO</button>
+                    								</div>
+												  </div>
+			                                     </div>
+   												</div>
+											</form>
+											</td>
+									<?php }else{?>
+												<td><button type="button" class="btn btn-primary btn-sm" disabled>Enter Contest</button></td>
 										<?php } ?>
 										</tr>
 										<?php } ?>

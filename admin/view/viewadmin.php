@@ -16,19 +16,29 @@
 			</div>
 
 			<!--Tabbed Navigation of body-->
-			<div class="col-md-2"></div>
+			<div class="col-md-2">
+				<div class="panel panel-info" id="manageUsers" style="display:none">
+					       <div class="panel-heading" align="center">
+						      Control Panel
+					       </div>
+						  <ul class="nav nav-pills nav-stacked"> 
+ 							<li class="active" align="center"><a href="#">Import Users</a></li>
+						  </ul>
+					</div>
+				
+			</div>
 			<div class="col-md-8">
 				<ul class="nav nav-tabs" role="tablist">
-					<li role="presentation" class="active" id="contesttab">
+					<li role="presentation" class="active" id="contesttab" onclick="showManageUsersTab(this.id)">
 						<a href="#contestcontent" aria-controls="contesttab" data-toggle="tab">Contest Setup</a>
 					</li>
-					<li role="presentation" id="addproblemstab"  class="unactive " >
+					<li role="presentation" id="addproblemstab"  class="unactive" onclick="showManageUsersTab(this.id)" >
 						<a href="#problemscontent" id="problemtablink" aria-controls="problemstab" data-toggle="tab">Add Problems</a>
 					</li>
-					<li role="presentation" id="userstatustab"  class="unactive" >
-						<a href="#userstatus" aria-controls="userstatustab" data-toggle="tab">User Status</a>
+					<li role="presentation" id="userStatusTab"  class="unactive" onclick="showManageUsersTab(this.id)">
+					    <a href="#userStatus" aria-controls="userstatustab" data-toggle="tab">Manage Users</a>
 					</li>
-					<li role="presentation" id="editcontesttab"  class="unactive" >
+					<li role="presentation" id="editcontesttab"  class="unactive" onclick="showManageUsersTab(this.id)">
 						<a href="#editcontest" aria-controls="editcontesttab" data-toggle="tab">Edit Contests</a>
 					</li>
 				</ul>
@@ -191,11 +201,16 @@
 							</div>
 						</div>
 					</div>
-					<div role="tabpanel" class="tab-pane fade" id="userstatus">
+					<div role="tabpanel" class="tab-pane fade" id="userStatus">
 						<div class="row">
 							&nbsp;
 						</div>
-						User Status
+					   <form enctype="multipart/form-data" action="#" method="post">
+						      <div class="form-group" id="uploadCSV">
+								<input type="file" value="Choose File" name="csvFile">
+								<button type="submit" class="btn btn-sm btn-primary" name="uploadCSV"><span class="glyphicon glyphicon-upload "></span>Upload CSV</button>
+						       </div>
+					    </form>
 					</div>
 					<!-- edit contest start -->
 					<div role="tabpanel" class="tab-pane fade" id="editcontest">

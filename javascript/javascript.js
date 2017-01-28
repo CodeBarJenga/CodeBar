@@ -37,3 +37,11 @@ var editor = ace.edit("editor");
    	   	
    });
 });
+
+
+function setContestOnGo(buttonId){
+	var modalButton = document.getElementById("openContest");
+	if(modalButton != null && modalButton != undefined){
+      modalButton.value = buttonId;
+	}
+}

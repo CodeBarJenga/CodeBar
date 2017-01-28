@@ -4,6 +4,7 @@
  *
  */
  require_once 'dbfunctions.php';
+ 
 class usermodel {
 	public $conn;
 	public function __construct()
