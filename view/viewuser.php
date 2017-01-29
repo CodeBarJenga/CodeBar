@@ -84,6 +84,9 @@ $sec="200";
 							<li role="presentation" id="problemarchivestab"  class="unactive" aria-controls="submissiontab" data-toggle="tab">
 								<a href="#problemarchives" aria-controls="problemarchivestab" data-toggle="tab">Problem Archives</a>
 							</li>
+							<li role="presentation" id="dashBoardTab"  class="unactive" aria-controls="submissiontab" data-toggle="tab" value=<?php echo $dashBoard; ?>>
+								<a href="#dashBoard" aria-controls="dashBoardTab" data-toggle="tab"  >DashBoard</a>
+							</li>
 						</ul>
 						<!-- Tab panes -->
 						<!--CONTEST TAB PANE BEGINS-->
@@ -262,12 +265,16 @@ $sec="200";
 							</div>
 
 							<!-- Problem Archives TAB PANE ENDS -->
+							<!-- Dashboard Tab Pane Begins -->
+							<div role="tabpanel" class="tab-pane fade" id="dashBoard">&nbsp;
+								<div id="container" style="height: 400px; margin: 0 auto"></div>
+							</div>
+							<!--DASHBOARD TAB PANE ENDS -->
 						</div>
 
 					</div>
 
 					<div class="col-md-2"></div>
-
 				</div>
 			</div>
 		</div>

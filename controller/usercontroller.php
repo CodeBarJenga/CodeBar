@@ -30,6 +30,8 @@ class usercontroller {
 		$lead = $this -> conn -> fetch_lead($_SESSION['username']);
 		$archive_contest = $this -> conn -> problem_archive();
 		$res = $this -> conn -> getSubmissionForUser($_SESSION['username']);
+		$dashBoard = $this -> conn -> getDashBoardStats($_SESSION['username'],$list);
+		$dashBoard = json_encode($dashBoard);
 		//$_SESSION['flag'] = TRUE;
 		include 'view/viewuser.php';
 		if (isset($_POST['entercontest'])) {
