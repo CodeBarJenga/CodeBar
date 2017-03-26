@@ -95,7 +95,7 @@
 									</div>
 									<div class="panel-body">
 
-										<div id="editor" name="editor" style="height: 300px"><?php echo htmlspecialchars(@$_SESSION[$_SESSION['problem'].'code']); ?></div>
+										<div id="editor" name="editor" style="height: 300px "><?php echo htmlspecialchars(@$_SESSION[$_SESSION['problem'].'code']); ?></div>
 
 									</div>
 								</div>
@@ -220,4 +220,3 @@
 	</script>
 	</body>
 </html>
-

@@ -1,7 +1,7 @@
 /**
  * @author CODEBAR
  */
-$(window).load(function(){
+$(window).on('load', function(){
 	$('#myModal').modal('show');
 	
 });
@@ -10,8 +10,7 @@ var editor = ace.edit("editor");
     editor.setTheme("ace/theme/chrome");
     editor.getSession().setMode("ace/mode/c_cpp");
     document.getElementById('editor').style.fontSize='16px';
-    
-    //editor.getSession().setMode("ace/mode/"+language.val());
+	//editor.getSession().setMode("ace/mode/"+language.val());
     $("#mode").on('change',function(){
     	var newmode = $("#mode option:selected").attr('id');
     	
@@ -29,6 +28,7 @@ var editor = ace.edit("editor");
 
    $("#submitcode").click(function(){
    	   $("#code").val(editor.getSession().getValue());
+   	   
    	     	
    });
    
